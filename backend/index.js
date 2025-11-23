@@ -19,6 +19,7 @@ const corsOptions = {
     "Content-Type",
     "Accept",
     "Authorization",
+    "Access-Control-Allow-Origin",
   ],
 };
 
