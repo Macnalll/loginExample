@@ -10,11 +10,20 @@ const app = express();
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
 
 // TODO: complete me (CORS)
-app.use(
-  cors({
-    origin: FRONTEND_URL,
-  })
-);
+const corsOptions = {
+  origin: FRONTEND_URL,
+  methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE", "OPTIONS"],
+  allowedHeaders: [
+    "Origin",
+    "X-Requested-With",
+    "Content-Type",
+    "Accept",
+    "Authorization",
+  ],
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 app.use(express.json());
 app.use('', routes);
