@@ -6,8 +6,6 @@ const AuthContext = createContext(null);
 // TODO: get the BACKEND_URL.
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
-console.log("CORS authcontext allowed origin:", BACKEND_URL);
-
 /*
  * This provider should export a `user` context state that is 
  * set (to non-null) when:
